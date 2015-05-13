@@ -1,14 +1,49 @@
+<!-- simple-todos.html -->
 <head>
-  <title>LearnIt</title>
+  <title>Todo List</title>  <!-- Name of the Tab -->
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <div class="container">
+    <header>
+      <h1>List of Tasks and Users</h1>
+    </header>
 
-  {{> hello}}
+
+
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+
+    <ul>
+  {{#each names}}
+  {{> data}}
+  {{/each}}
+</ul>
+
+  </div>
+
+  {{> neo}}
+  <p></p>
+
+
+
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+
+
+<template name="task">
+  <li>{{text}}</li>
 </template>
+
+
+<template name="neo">
+<p>Say this thing right here</p>
+</template>
+
+<template name="data">
+<li>{{names}}</li>
+  </template>

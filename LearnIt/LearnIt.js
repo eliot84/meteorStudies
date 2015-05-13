@@ -1,23 +1,24 @@
+// simple-todos.js
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+  // This code only runs on the client
+  Template.body.helpers({
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
+    //Arrays to be Used in html for processing
+    tasks: [
+      { text: "This is task 1" },
+      { text: "This is task 2" },
+      { text: "This is task 3" }
+    ],
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
+    names: [
+      { names: "Jack"},
+      { names: "jones"},
+      { names: "Robert"},
+      { names: "Sandra"},
+      { names: "Mike"},
+      { names: "Jane"},
+      { names: "Alice"},
+      { names: "Barbara"}
+    ]
   });
 }
