@@ -1,6 +1,10 @@
-<!-- simple-todos.html -->
+<!-- simple-todos.html 
+
+USING COLLECTIONS
+
+-->
 <head>
-  <title>Todo List</title>  <!-- Name of the Tab -->
+  <title>Todo List</title>  
 </head>
 
 <body>
@@ -13,21 +17,16 @@
 
 
     <ul>
-      {{#each tasks}}
-        {{> task}}
+      {{#each insideCollected}} <!-- for each item in the multidimensional array insideCollected -->
+        {{> data}} <!-- print out the names in list format -->
       {{/each}}
     </ul>
 
-    <ul>
-  {{#each names}}
-  {{> data}}
-  {{/each}}
-</ul>
+
 
   </div>
 
-  {{> neo}}
-  <p></p>
+
 
 
 
@@ -35,14 +34,6 @@
 
 
 
-<template name="task">
-  <li>{{text}}</li>
-</template>
-
-
-<template name="neo">
-<p>Say this thing right here</p>
-</template>
 
 <template name="data">
 <li>{{names}}</li>
