@@ -9,9 +9,20 @@ USING COLLECTIONS
 
 <body>
   <div class="container">
-    <header>
-      <h1>List of Tasks and Users</h1>
-    </header>
+
+
+<header>
+  <h1>Todo List</h1>
+
+  <p>There are currently</p>
+
+
+
+  <!-- add a form below the h1 -->
+  <form class="new-task">
+    <input type="text" name="text" placeholder="Type to add new tasks" />
+  </form>
+</header>
 
 
 
@@ -21,7 +32,6 @@ USING COLLECTIONS
         {{> data}} <!-- print out the names in list format -->
       {{/each}}
     </ul>
-
 
 
   </div>
