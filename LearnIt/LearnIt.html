@@ -1,49 +1,76 @@
-<!-- simple-todos.html -->
 <head>
-  <title>Todo List</title>  <!-- Name of the Tab -->
+  <title>sandbox</title>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1>List of Tasks and Users</h1>
-    </header>
+  <h1>Welcome to Meteor!</h1>
+
+{{> myTemp}}
 
 
+{{> passJS}}
 
 
-    <ul>
-      {{#each tasks}}
-        {{> task}}
+{{#each names}}
+{{> useArrayinBody}}
+{{/each}}
+
+<!-- if data found in an array -->
+{{#if ages}}
+{{> checkforData}}
+{{/if}}
+
+<!-- No array exists do nothing -->
+{{#if noArray}}
+{{> checkforData}}
+{{/if}}
+
+<!-- If no data in a specific array do nothing -->
+{{#if noInfo}}
+{{> checkforData}}
+{{/if}}
+
+<!-- if else -->
+{{#if noArray}}
+{{> checkforData}}
+{{else}}
+{{> displayFindError}}
+{{/if}}
+
+<h3> Straight from the Server Collection Named: notes </h3>
+
+      {{#each notes}}
+        {{> note}}
       {{/each}}
-    </ul>
-
-    <ul>
-  {{#each names}}
-  {{> data}}
-  {{/each}}
-</ul>
-
-  </div>
-
-  {{> neo}}
-  <p></p>
-
-
 
 </body>
 
 
 
-<template name="task">
+<template name="myTemp">
+  <p>Hello I am the template called, "myTemp"!!! :-)</p>
+</template>
+
+<template name="passJS">
+<p>Passing a Variable from the .js file</p>
+<p>{{secretGreeting}}</p>
+</template>
+
+<!-- NOTE: If the variable or array needs to be accessed by multiple templates you can specify Template.body.helper instead of Template.passJS.helper :-) -->
+
+<template name="useArrayinBody">
+<li>{{name}}</li>
+</template>
+
+<template name="checkforData">
+  <p>There is DATA!</p>
+</template>
+
+<template name="displayFindError">
+  <p>I am sorry but there was no array inside of the body with the name noArray that was found </p>
+</template>
+
+
+<template name="note">
   <li>{{text}}</li>
 </template>
-
-
-<template name="neo">
-<p>Say this thing right here</p>
-</template>
-
-<template name="data">
-<li>{{names}}</li>
-  </template>
