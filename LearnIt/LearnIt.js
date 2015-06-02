@@ -13,6 +13,13 @@ if (Meteor.isClient) {
     secretGreeting: "yo"
  });
 
+//Passes information to the helpFunk template through a helper function
+Template.helpFunk.helpers({
+   source: function () {
+    return "say hello helper function!";
+   }
+
+  });
 
 // You can store multiple helpers in one block secret and word are both helpers 
 Template.serverStuff.helpers({
